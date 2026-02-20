@@ -31,11 +31,15 @@ import batToExeHandler from "./batToExe.ts";
 import textEncodingHandler from "./textEncoding.ts";
 import sb3ToHtmlHandler from "./sb3tohtml.ts";
 import libopenmptHandler from "./libopenmpt.ts";
+import { midiCodecHandler, midiSynthHandler } from "./midi.ts";
 import lzhHandler from "./lzh.ts";
+import txtToInfiniteCraftHandler from "./txtToInfiniteCraft.ts";
+import wadHandler from "./wad.ts";
 import espeakngHandler from "./espeakng.js"
 import textToShellHandler from "./texttoshell.ts";
 import batchHandler from "./batch.ts";
 import bsorHandler from "./bsor.ts";
+import fontHandler from "./font.ts";
 
 const handlers: FormatHandler[] = [];
 try { handlers.push(new svgTraceHandler()) } catch (_) { };
@@ -70,11 +74,16 @@ try { handlers.push(new batToExeHandler()) } catch (_) { };
 try { handlers.push(new sb3ToHtmlHandler()) } catch (_) { };
 try { handlers.push(new textEncodingHandler()) } catch (_) { };
 try { handlers.push(new libopenmptHandler()) } catch (_) { };
+try { handlers.push(new midiCodecHandler()) } catch (_) { };
+try { handlers.push(new midiSynthHandler()) } catch (_) { };
 try { handlers.push(new lzhHandler()) } catch (_) { };
+try { handlers.push(new wadHandler()) } catch (_) { };
 try { handlers.push(new pandocHandler()) } catch (_) { };
+try { handlers.push(new txtToInfiniteCraftHandler()) } catch (_) { };
 try { handlers.push(new espeakngHandler()) } catch (_) { };
 try { handlers.push(new textToShellHandler()) } catch (_) { };
 try { handlers.push(new batchHandler()) } catch (_) { };
 try { handlers.push(new bsorHandler()) } catch (_) { };
+try { handlers.push(new fontHandler()) } catch (_) { };
 
 export default handlers;
