@@ -2,8 +2,8 @@ import type { FileData, FileFormat, FormatHandler } from "src/FormatHandler";
 import * as NBT from "nbtify";
 import { gunzipSync, gzipSync } from "fflate";
 
-class schematicConverter implements FormatHandler {
-    public name: string = "schematicConverter";
+class mcSchematicHandler implements FormatHandler {
+    public name: string = "mcSchematic";
     public supportedFormats?: FileFormat[];
     public ready: boolean = false;
 
@@ -384,4 +384,4 @@ class schematicConverter implements FormatHandler {
     }
 }
 
-export default schematicConverter;
+export default mcSchematicHandler;
